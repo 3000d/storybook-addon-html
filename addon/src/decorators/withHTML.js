@@ -9,7 +9,7 @@ export const withHTML = makeDecorator({
     setTimeout(() => {
       const channel = addons.getChannel();
       const rootSelector = parameters.root || '#root';
-      const root = document.querySelector(rootSelector);
+      const root = document.querySelector(rootSelector) ?? parameters.fallback ? document.querySelector('#root') : undefined;
       let html = root ? root.innerHTML : `${rootSelector} not found.`;
       if (parameters.removeEmptyComments) {
         html = html.replace(/<!--\s*-->/g, '');
