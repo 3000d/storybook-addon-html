@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "storybook-addon-html"
   "workspaces": {
     "packages": [
       "addon",
